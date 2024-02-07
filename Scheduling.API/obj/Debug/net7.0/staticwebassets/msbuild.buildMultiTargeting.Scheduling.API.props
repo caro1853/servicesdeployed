@@ -1,3 +1,0 @@
-﻿<Project>
-  <Import Project="../build/Scheduling.API.props" />
-</Project>
