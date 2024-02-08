@@ -15,7 +15,7 @@ namespace Scheduling.API.Controllers
 {
     [ApiController]
     [Route("api/v1/calendar")]
-    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class CalendarController: ControllerBase
     {
         private readonly IMediator mediator;
@@ -26,7 +26,7 @@ namespace Scheduling.API.Controllers
         }
 
         [HttpGet()]
-        [Route("getoperationalhours")]
+        [Route("getoperationalhours/{doctorId:int}")]
         public async Task<ActionResult<IEnumerable<OperationalHoursVM>>> Get(int doctorId)
         {
             var query = new GetOperationalHourByDoctorQuery(doctorId);
@@ -36,7 +36,7 @@ namespace Scheduling.API.Controllers
 
 
         [HttpPost()]
-        [Route("configureoperationalhours")]
+        [Route("configureoperationalhours/{doctorId:int}")]
         public async Task<ActionResult> Configure([FromBody] ConfiguraOperationalHoursByDoctorCommand operationalHoursByDoctor, int doctorId)
         {
             await mediator.Send(operationalHoursByDoctor);
@@ -44,7 +44,7 @@ namespace Scheduling.API.Controllers
         }
 
         [HttpGet()]
-        [Route("gethoursavailable")]
+        [Route("gethoursavailable/{doctorId:int}")]
         public async Task<ActionResult<IEnumerable<HourVM>>> GetHoursAvailable(int doctorId, DateTime scheduleDate)
         {
             var query = new GetHoursAvailableByDoctorAndDateQuery(doctorId, scheduleDate);

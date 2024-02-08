@@ -1,5 +1,7 @@
 ﻿using System;
 using AutoMapper;
+using Scheduling.Application.Features.AppointmentFeatures.Queries.GetAppointmentByDoctorAndDate;
+using Scheduling.Application.Features.AppoitmentFeatures.Commands.CreateAppoitment;
 using Scheduling.Application.Features.Shared;
 using Scheduling.Domain.Entities;
 
@@ -12,8 +14,8 @@ namespace Scheduling.Application.Mappings
             CreateMap<OperationalHour, OperationalHoursVM>();
             CreateMap<OperationalHoursVM, OperationalHour>();
             CreateMap<Hour, HourVM>().ReverseMap();
-            //CreateMap<CreateAppointmentCommand, Appointment>().ReverseMap();
-            //CreateMap<Appointment, AppointmentMV>().ReverseMap();
+            CreateMap<CreateAppointmentCommand, Appointment>().ReverseMap();
+            CreateMap<Appointment, AppointmentMV>().ReverseMap();
             CreateMap<Patient, PatientMV>().ReverseMap();
             CreateMap<Doctor, DoctorVM>().ReverseMap();
         }
