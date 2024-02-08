@@ -12,10 +12,14 @@ public class WeatherForecastController : ControllerBase
     };
 
     private readonly ILogger<WeatherForecastController> _logger;
+    private readonly IConfiguration configuration;
 
-    public WeatherForecastController(ILogger<WeatherForecastController> logger)
+    public WeatherForecastController(ILogger<WeatherForecastController> logger,
+        IConfiguration configuration
+        )
     {
         _logger = logger;
+        this.configuration = configuration;
     }
 
     [HttpGet(Name = "GetWeatherForecast")]
@@ -29,6 +33,13 @@ public class WeatherForecastController : ControllerBase
             Summary = Summaries[Random.Shared.Next(Summaries.Length)]
         })
         .ToArray();
+    }
+
+    [HttpGet]
+    [Route("GetEnvironment")]
+    public string GetEnvironment()
+    {
+        return configuration["keyjwt"]?? "no encontrada";
     }
 }
 
