@@ -16,8 +16,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheduling.Application", "S
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheduling.Infrastructure", "Scheduling.Infrastructure\Scheduling.Infrastructure.csproj", "{7629A4ED-866B-4A63-BC7E-AB0289CECFF3}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Scheduling.API.Tests", "Scheduling.API.Tests\Scheduling.API.Tests.csproj", "{248C56D9-97D4-40F1-9F2D-3E25F8396B65}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

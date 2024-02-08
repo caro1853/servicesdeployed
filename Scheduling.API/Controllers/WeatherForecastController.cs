@@ -37,9 +37,14 @@ public class WeatherForecastController : ControllerBase
 
     [HttpGet]
     [Route("GetEnvironment")]
-    public string GetEnvironment()
+    public ActionResult GetEnvironment()
     {
-        return configuration["keyjwt"]?? "no encontrada";
+        return Ok(new
+        {
+            key = configuration["keyjwt"] ?? "no encontrada",
+            test = "1234"
+        });
+            
     }
 }
 
