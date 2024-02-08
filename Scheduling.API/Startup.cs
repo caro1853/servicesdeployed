@@ -59,7 +59,7 @@ namespace Scheduling.API
                     }
                 });
             });
-            /*
+            
             services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
                 .AddJwtBearer(opciones => opciones.TokenValidationParameters = new TokenValidationParameters
                 {
@@ -70,7 +70,7 @@ namespace Scheduling.API
                     IssuerSigningKey =
                         new SymmetricSecurityKey(Encoding.UTF8.GetBytes(Configuration["keyjwt"] ?? string.Empty)),
                     ClockSkew = TimeSpan.Zero
-                });*/
+                });
         }
     }
 }

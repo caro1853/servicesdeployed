@@ -14,12 +14,14 @@
     <None Remove="Features\" />
     <None Remove="Shared\" />
     <None Remove="Mappings\" />
+    <None Remove="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Contracts\" />
     <Folder Include="Features\" />
     <Folder Include="Shared\" />
     <Folder Include="Mappings\" />
+    <Folder Include="Helpers\" />
   </ItemGroup>
   <ItemGroup>
     <PackageReference Include="AutoMapper" Version="12.0.0" />
