@@ -26,7 +26,7 @@ namespace Scheduling.API.Controllers
         }
 
         [HttpPost()]
-        public async Task<ActionResult<ResponseAuthentication>> Login(AuthenticationInfo authenticationInfo)
+        public async Task<ActionResult<ResponseAuthentication>> Login([FromBody] AuthenticationInfo authenticationInfo)
         {
             try
             {

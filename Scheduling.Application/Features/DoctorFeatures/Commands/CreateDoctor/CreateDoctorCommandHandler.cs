@@ -23,8 +23,11 @@ namespace Scheduling.Application.Features.DoctorFeatures.Commands.CreateDoctor
         {
             var doctor = new Doctor();
             doctor.Name = request.Name;
+            doctor.Email = request.Email;
+            doctor.Especiality = request.Especiality;
+            doctor.Description = request.Description;
 
-            var newDoctor = await doctorRepository.AddAsync(doctor);
+        var newDoctor = await doctorRepository.AddAsync(doctor);
             return newDoctor.Id;
         }
     }
