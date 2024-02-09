@@ -91,6 +91,12 @@ namespace Scheduling.API.Tests
 
             Assert.True(r?.ToString().Contains("token"));
         }
+
+        [Fact]
+        public void Check_Test_Validation()
+        {
+            Assert.Fail("Esta prueba falla");
+        }
     }
 }
 
