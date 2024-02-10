@@ -27,12 +27,11 @@ namespace Scheduling.API.Tests
 		public void ConfigureServices(IServiceCollection services)
 		{
             services.AddApplicationServices();
-            //services.AddInfrastructureServices(configuration);
-
+            
             //Infrastructure
             services.AddDbContext<ApplicationDbContext>(opt =>
             {
-                opt.UseInMemoryDatabase("PruebaIngreso");
+                opt.UseInMemoryDatabase("SchedulingTest");
             });
 
             services.AddScoped(typeof(IAsyncRepository<>), typeof(RepositoryBase<>));
@@ -40,13 +39,6 @@ namespace Scheduling.API.Tests
             services.AddScoped<IPatientRepository, PatientRepository>();
             services.AddScoped<IAppointmentRepository, AppointmentRepository>();
             services.AddScoped<IOperationalHourRepository, OperationalHourRepository>();
-
-
-
-
-            //services.AddAutoMapper(Assembly.GetExecutingAssembly());
-
-            //services.AddMediatR(Assembly.GetExecutingAssembly());
 
             services.AddControllers().AddApplicationPart(
                 Assembly.Load("Scheduling.API"));

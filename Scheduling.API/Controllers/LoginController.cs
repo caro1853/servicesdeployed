@@ -1,7 +1,5 @@
-﻿using System;
+﻿
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
-using System.Numerics;
 using System.Security.Claims;
 using System.Text;
 using MediatR;
@@ -30,10 +28,8 @@ namespace Scheduling.API.Controllers
         {
             try
             {
-
                 var query = new GetClaimsQuery(authenticationInfo.Email);
                 var claims = await mediator.Send(query);
-
 
                 bool suceeded = true;
                 var validemails = new List<string>() { "doc", "pat" };
@@ -53,7 +49,7 @@ namespace Scheduling.API.Controllers
                 {
                     message = ex.Message
                 };
-                return BadRequest(message);
+                return Unauthorized(message);
             }
             catch (Exception ex)
             {
@@ -84,6 +80,13 @@ namespace Scheduling.API.Controllers
                 Token = new JwtSecurityTokenHandler().WriteToken(token),
                 Expiration = espiration
             };
+        }
+
+        [HttpGet]
+        [Route("/ValidateService")]
+        public string ValidateService()
+        {
+            return "listening";
         }
     }
 }

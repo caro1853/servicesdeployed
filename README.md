@@ -1,3 +1,7 @@
+# Deployed application
+
+[https://servicesdeployed.azurewebsites.net/swagger/index.html]
+
 # Introduction
 
 This is a project that allows scheduling medical appointments, doctors can configure the hours they will be able to see patients, and see the scheduled appointments. Patients can create an appointment after selecting a professional.

@@ -49,7 +49,7 @@ namespace Scheduling.API.Tests
             }
             catch (Exception ex)
             {
-                Assert.True(response?.StatusCode == System.Net.HttpStatusCode.BadRequest);
+                Assert.True(response?.StatusCode == System.Net.HttpStatusCode.Unauthorized);
                 var r = System.Text.Json.JsonSerializer
                 .Deserialize<object>(response.Content.ReadAsStringAsync().Result);
                 Assert.True(r?.ToString().Contains("Usuario inválido"));

@@ -15,7 +15,7 @@ namespace Scheduling.API.Controllers
 {
     [ApiController]
     [Route("api/v1/calendar")]
-    //[Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class CalendarController: ControllerBase
     {
         private readonly IMediator mediator;
