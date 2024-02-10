@@ -1,0 +1,13 @@
+﻿version: '3.4'
+
+services:
+  schedulingdb:
+    image: mcr.microsoft.com/mssql/server:2022-preview-ubuntu-22.04
+    container_name: schedulingdb
+    platform: linux/amd64
+    environment:
+        SA_PASSWORD: "Caro123456"
+        ACCEPT_EULA: "Y"
+    restart: always
+    ports:
+        - "1433:1433"
