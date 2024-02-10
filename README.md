@@ -4,14 +4,14 @@ This is a project that allows scheduling medical appointments, doctors can confi
 
 I used different technologies to build the application, such as .NET 7, Entity Framework, SQL Server, Docker, Azure App Service, GitHub Actions, and Angular.
 
-Look an overview of the technologies used in the project:
+Look an overview of the technologies I used in the project:
 
 ![image](resourcesreadme/technologies.png)
 
 # Authentication
 
 The following doctors and patients were pre-configured to perform the demo.
-
+```
 - doctor1@gmail.com
 - doctor2@gmail.com
 - doctor3@gmail.com
@@ -22,10 +22,13 @@ The following doctors and patients were pre-configured to perform the demo.
 - patient3@gmail.com
 - patient4@gmail.com
 - patient5@gmail.com
+```
 
 The password can be 123
 
-[app screenshots](resourcesreadme/README.md)
+[app screenshots](resourcesreadme/README.md){:target="_blank"}
+
+[Frontend respository](https://github.com/caro1853/ui_stov)
 
 # Database diagram
 
@@ -44,7 +47,7 @@ The password can be 123
 
 Enable database server using docker. Docker is a software platform that allows you to quickly build, test, and deploy applications.
 
-[See how to configure sql server with docker](resources_container_sqlserver/README.md)
+[See how to configure sql server with docker](resources_container_sqlserver/README.md){:target="_blank"}
 
 ## Setup database
 
@@ -60,7 +63,7 @@ dotnet ef --startup-project ../Scheduling.API/ database update
 
 # Web API
 
-I followed recommendations from Domain Driven Design architectures and [clean arquitecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html), I used version 7 of .NET, used Entity Framework with the code first approach, implemented CQRS using packages such as MediaTR, FluentValidation and AutoMapper, worked on a database in SqlServer.
+I followed recommendations from Domain Driven Design architectures and [clean arquitecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html){:target="_blank"}, I used version 7 of .NET, used Entity Framework with the code first approach, implemented CQRS using packages such as MediaTR, FluentValidation and AutoMapper, worked on a database in SqlServer.
 
 # Layer structure
 
@@ -152,7 +155,7 @@ I used Angluar CLI `ng generate environments` to generate the environment files.
 example of environment.ts file:
 
 
-```json
+```typescript
 export const environment = {
     baseURLAPI: 'https://servicesdeployed.azurewebsites.net'
 };
@@ -186,7 +189,7 @@ const pagesRoutes: Routes = [
   ];
 ```
 
-Example of routes in the AuthModule:
+Example of routes:
 
 ```typescript
 http://localhost:4200/auth/login
