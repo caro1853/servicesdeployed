@@ -7,9 +7,6 @@ The application is deployed in Azure App Service, you can access the application
 
 [https://testdeploy-ui.azurewebsites.net/]
 
-[web](https://testdeploy-ui.azurewebsites.net/{:target="_blank"})
-
-
 # Introduction
 
 This is a project that allows scheduling medical appointments, doctors can configure the hours they will be able to see patients, and see the scheduled appointments. Patients can create an appointment after selecting a professional.
