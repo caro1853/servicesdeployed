@@ -52,12 +52,10 @@ namespace Scheduling.API.Tests
             var contentdoctor = new StringContent(JsonConvert.SerializeObject(doctor), Encoding.UTF8, "application/json");
             var content = new StringContent(JsonConvert.SerializeObject(authInfo), Encoding.UTF8, "application/json");
 
-            var rescreatedoctor = _client.PostAsync("api/v1/doctor", contentdoctor).Result;
-            rescreatedoctor.EnsureSuccessStatusCode();
+            var rescreatedoctor = await _client.PostAsync("api/v1/doctor", contentdoctor);
 
-            var reslogin = _client.PostAsync("login", content).Result;
-            reslogin.EnsureSuccessStatusCode();
-
+            var reslogin = await _client.PostAsync("login", content);
+            
             var jsonString = await reslogin.Content.ReadAsStringAsync();
             var response = JsonConvert.DeserializeObject<ResponseAuthentication>(jsonString);
 

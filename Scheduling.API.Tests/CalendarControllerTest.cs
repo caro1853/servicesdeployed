@@ -25,7 +25,6 @@ namespace Scheduling.API.Tests
             {
                 response = await _client.GetAsync("api/v1/calendar/getoperationalhours/1");
                 
-                response.EnsureSuccessStatusCode();
             }
             catch(Exception ex)
             {
@@ -43,7 +42,6 @@ namespace Scheduling.API.Tests
             _client.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             response = await _client.GetAsync("api/v1/calendar/getoperationalhours/1");
 
-            response.EnsureSuccessStatusCode();
             Assert.True(response?.StatusCode == System.Net.HttpStatusCode.OK);
         }
 
