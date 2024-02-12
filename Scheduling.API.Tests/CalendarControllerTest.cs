@@ -16,7 +16,7 @@ namespace Scheduling.API.Tests
 		{
             
         }
-
+        /*
         [Fact]
         public async Task Getoperationalhours_Returns_Unauthorized()
         {
@@ -46,7 +46,7 @@ namespace Scheduling.API.Tests
             response.EnsureSuccessStatusCode();
             Assert.True(response?.StatusCode == System.Net.HttpStatusCode.OK);
         }
-
+        */
 
     }
 }

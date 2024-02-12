@@ -6,7 +6,7 @@ name: Build and deploy ASP.Net Core app to Azure Web App - servicesdeployed
 on:
   push:
     branches:
-      - main
+      - unit_test_job
   workflow_dispatch:
 
 jobs:
@@ -37,24 +37,3 @@ jobs:
           name: .net-app
           path: ${{env.DOTNET_ROOT}}/myapp
 
-  deploy:
-    runs-on: ubuntu-latest
-    needs: build
-    environment:
-      name: 'Production'
-      url: ${{ steps.deploy-to-webapp.outputs.webapp-url }}
-
-    steps:
-      - name: Download artifact from build job
-        uses: actions/download-artifact@v3
-        with:
-          name: .net-app
-
-      - name: Deploy to Azure Web App
-        id: deploy-to-webapp
-        uses: azure/webapps-deploy@v2
-        with:
-          app-name: 'servicesdeployed'
-          slot-name: 'Production'
-          publish-profile: ${{ secrets.AZUREAPPSERVICE_PUBLISHPROFILE_4C6E824188814C44B8ECAD5BEC58AFC8 }}
-          package: .
