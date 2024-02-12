@@ -1,6 +1,14 @@
 # Deployed application
 
+The application is deployed in Azure App Service, you can access the application using the following link to see the services:
 [https://servicesdeployed.azurewebsites.net/swagger/index.html]
+
+The application is deployed in Azure App Service, you can access the application using the following link to see the frontend:
+
+[https://testdeploy-ui.azurewebsites.net/]
+
+[web](https://testdeploy-ui.azurewebsites.net/{:target="_blank"})
+
 
 # Introduction
 
@@ -30,7 +38,7 @@ The following doctors and patients were pre-configured to perform the demo.
 
 The password can be 123
 
-[app screenshots](resourcesreadme/README.md){:target="_blank"}
+[app screenshots](resourcesreadme/README.md)
 
 [Frontend respository](https://github.com/caro1853/ui_stov)
 
@@ -51,7 +59,7 @@ The password can be 123
 
 Enable database server using docker. Docker is a software platform that allows you to quickly build, test, and deploy applications.
 
-[See how to configure sql server with docker](resources_container_sqlserver/README.md){:target="_blank"}
+[See how to configure sql server with docker](resources_container_sqlserver/README.md){target="_blank"}
 
 ## Setup database
 

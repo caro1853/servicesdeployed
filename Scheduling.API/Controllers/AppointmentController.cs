@@ -1,5 +1,7 @@
 ﻿using System;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Scheduling.Application.Features.AppointmentFeatures.Queries.GetAppointmentByDoctorAndDate;
 using Scheduling.Application.Features.AppoitmentFeatures.Commands.CreateAppoitment;
@@ -9,6 +11,7 @@ namespace Scheduling.API.Controllers
 {
     [ApiController]
     [Route("api/v1/appointment")]
+    [Authorize(AuthenticationSchemes = JwtBearerDefaults.AuthenticationScheme)]
     public class AppointmentController : ControllerBase
     {
         private readonly IMediator mediator;
@@ -21,27 +24,8 @@ namespace Scheduling.API.Controllers
         [HttpPost(Name = "CreateAppointment")]
         public async Task<ActionResult<int>> CreateAppointment([FromBody] CreateAppointmentCommand appointment)
         {
-            try
-            {
-                var result = await mediator.Send(appointment);
-                return result;
-            }
-            catch (ApplicationException ex)
-            {
-                var message = new
-                {
-                    message = ex.Message
-                };
-                return BadRequest(message);
-            }
-            catch (Exception ex)
-            {
-                var message = new
-                {
-                    message = ex.Message
-                };
-                return BadRequest(message);
-            }
+            var result = await mediator.Send(appointment);
+            return result;
         }
 
         [HttpGet]

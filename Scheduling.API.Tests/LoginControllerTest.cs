@@ -57,7 +57,7 @@ namespace Scheduling.API.Tests
         }
 
         [Fact]
-        public void Post_Request_Returns_Ok_Status_Code()
+        public async void Post_Request_Returns_Ok_Status_Code()
         {
             //doctor
             var doctor = new

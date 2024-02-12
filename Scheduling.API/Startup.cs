@@ -5,6 +5,7 @@ using Microsoft.OpenApi.Models;
 using System.Text;
 using Scheduling.Infrastructure;
 using Scheduling.Application;
+using Scheduling.API.Filters;
 
 namespace Scheduling.API
 {
@@ -32,7 +33,10 @@ namespace Scheduling.API
                         .AllowAnyHeader());
             });
 
-            services.AddControllers();
+            services.AddControllers(options =>
+            {
+                options.Filters.Add(typeof(FilterException));
+            });
             // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen(c =>

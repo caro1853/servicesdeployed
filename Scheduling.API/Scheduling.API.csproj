@@ -30,8 +30,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Remove="Extensions\" />
+    <None Remove="Filters\" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Extensions\" />
+    <Folder Include="Filters\" />
   </ItemGroup>
 </Project>

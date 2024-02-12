@@ -1,5 +1,7 @@
 ﻿using System;
 using MediatR;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Mvc;
 using Scheduling.Application.Features.PatientFeatures.Commands.CreatePatient;
 

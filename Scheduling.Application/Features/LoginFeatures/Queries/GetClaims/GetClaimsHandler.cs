@@ -30,6 +30,7 @@ namespace Scheduling.Application.Features.LoginFeatures.Queries.GetClaims
             {
                 claims.Add(new Claim("isdoctor", "true"));
                 claims.Add(new Claim("doctorid", doctor.Id.ToString()));
+                claims.Add(new Claim("name", doctor.Name??string.Empty));
             }
             else
             {
@@ -38,6 +39,7 @@ namespace Scheduling.Application.Features.LoginFeatures.Queries.GetClaims
                 {
                     claims.Add(new Claim("ispatient", "true"));
                     claims.Add(new Claim("patientid", patient.Id.ToString()));
+                    claims.Add(new Claim("name", patient.Name ?? string.Empty));
                 }
                 else
                 {
