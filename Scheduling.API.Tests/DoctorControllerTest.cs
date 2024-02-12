@@ -22,15 +22,6 @@ namespace Scheduling.API.Tests
             var response = await _client.GetAsync("api/v1/doctor");
             Assert.Equal(HttpStatusCode.OK, response.StatusCode);
         }
-
-        // Otras pruebas de integración pueden ser agregadas aquí
-
-        public void Dispose()
-        {
-            // Liberar recursos una vez que las pruebas han sido completadas
-            _client.Dispose();
-            _server.Dispose();
-        }
     }
 }
 
